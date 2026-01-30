@@ -1,0 +1,169 @@
+(footprint "HS96L03W2C03"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 5.588 -3.302 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "82cf4d83-b6a4-443c-ba58-5dd19d8f1aa3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "HS96L03W2C03"
+		(at 10.6 -11.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "17528b9a-ef60-404c-a6ce-62ff5d25b7a3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "317bbe87-640b-452a-804b-8b0067ae55bc")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5b321026-d606-468c-b64a-b4923fd098a2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "HS96L03W2C03"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d93be65f-6f54-4709-bdec-8227adbd933a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "SHENZHEN HANSHENG INDUSTRAIL CO."
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f1b975a4-3e6e-4616-b4c3-45c57bedbeda")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "populate" "0"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "de575b0a-8835-44cf-8e67-a4009bf8d230")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -13.97 -2.54)
+		(end 13.97 25.4)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "6b4f950c-7a5c-4a78-a39d-0f483da392ff")
+	)
+	(fp_rect
+		(start -5.08 -1.27)
+		(end 5.08 1.27)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "7acf4d53-0651-42fe-a412-3c62951030bb")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 10.6 -9.8 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "4eb3ab9b-f6d5-48a7-869a-631ffd246309")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -3.81 0)
+		(size 1.75 1.75)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2270e0e3-603a-48d4-8eca-f710d9f9058a")
+	)
+	(pad "2" thru_hole circle
+		(at -1.27 0)
+		(size 1.75 1.75)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "37aad1c3-4ff7-4a54-8808-ebbea9dc2195")
+	)
+	(pad "3" thru_hole circle
+		(at 1.27 0)
+		(size 1.75 1.75)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dded6646-3855-4f53-b775-e3704b6178ac")
+	)
+	(pad "4" thru_hole circle
+		(at 3.81 0)
+		(size 1.75 1.75)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "856cca15-cdda-403d-9a7f-6e8329d34464")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libraries/lib_3d/ssd1306_with_pins.STEP"
+		(offset
+			(xyz 0 -12.2 2.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

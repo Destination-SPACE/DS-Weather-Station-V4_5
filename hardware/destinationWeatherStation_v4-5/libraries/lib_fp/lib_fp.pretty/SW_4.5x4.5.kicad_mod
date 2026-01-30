@@ -1,0 +1,265 @@
+(footprint "SW_4.5x4.5"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -2.75 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "02ae0eb7-cd28-41e6-a84d-33dc794073a7")
+		(effects
+			(font
+				(size 0.75 0.75)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "PTS647SM38SMTR2LFS"
+		(at 0 2.75 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "bddd1135-d63e-4a7d-971b-b4819a6b9788")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.05)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "af412b23-3ac0-4be0-815b-33ecf85d94fa")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "be3b5ffa-0861-497b-a7a6-f09defb7404c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet alt" "/datasheets/Shenzhen-Kinghelm-Elec-KH-4-5X4-5X4-3H-STM.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f1fc613d-13b0-4fca-b330-a740da90a3b4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "C&K"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9fb4bfbb-c8f5-4051-8ee8-74ca6546b271")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer alt" "Shenzhen Kinghelm Elec "
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dc825448-4844-493d-ada8-ab6a9802f7d1")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "mpn" "PTS 647 SM38 SMTR2 LFS"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9ca93034-ac01-47bc-8be0-1a21e9ba1b56")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "mpn alt" "KH-4.5X4.5X4.3H-STM"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "14de9e19-f7e1-4baf-89d4-0d8589dc9da0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "populate" "1"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a6f098d5-1d4e-41df-b745-2255e5f73c63")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -0.35 0)
+		(end 0.35 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "09f53f0a-de9b-4252-b898-3b78d960765d")
+	)
+	(fp_line
+		(start 0 -0.35)
+		(end 0 0.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e648a716-847b-43c5-a785-2e8242533507")
+	)
+	(fp_rect
+		(start -3.25 -1.95)
+		(end -2.25 -1.25)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ce22971e-992d-4285-be1c-234bda37517e")
+	)
+	(fp_rect
+		(start -3.25 1.25)
+		(end -2.25 1.95)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "a5f73387-2fb3-4272-a930-e5c447014769")
+	)
+	(fp_rect
+		(start -2.25 -2.25)
+		(end 2.25 2.25)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "20ec23e5-a67a-4540-bced-b9228a8a0b20")
+	)
+	(fp_rect
+		(start 2.25 -1.95)
+		(end 3.25 -1.25)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "bdd03869-6189-4d9e-a0f6-88fd80374440")
+	)
+	(fp_rect
+		(start 2.25 1.25)
+		(end 3.25 1.95)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e26acbc6-4a7d-4ce5-bd1d-daec5d9c5346")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 0.25 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "16163dd0-a137-4f62-90a1-638f91d1f75f")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2.75 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "eb61832b-d4cf-4045-a33c-96bd83c34c34")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.05)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.625 -1.6)
+		(size 1.55 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "b3a3b3e1-4f18-42dd-8588-7240fdf929bb")
+	)
+	(pad "2" smd rect
+		(at 2.625 -1.6)
+		(size 1.55 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "7a373a5c-af17-47e0-8585-fcd9cf42e7ec")
+	)
+	(pad "3" smd rect
+		(at -2.625 1.6)
+		(size 1.55 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "1f62594e-3d08-404c-9b7d-9906c1d1dbb6")
+	)
+	(pad "4" smd rect
+		(at 2.625 1.6)
+		(size 1.55 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "c175be63-6a0d-49fa-9d8c-91aaa5f3f02b")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libraries/lib_3d/PTS647SM38SMTR2LFS.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 90 0)
+		)
+	)
+)
