@@ -3,13 +3,13 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "7.0.11"
+      "Version": "9.0.6"
     },
-    "CreationDate": "2024-02-24T16:34:23-05:00"
+    "CreationDate": "2026-01-30T18:10:03-05:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "destinationWeatherStation_r4-5",
+      "Name": "destinationWeatherStation_v4-5",
       "GUID": "64657374-696e-4617-9469-6f6e57656174",
       "Revision": "03"
     },
@@ -34,62 +34,62 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "destinationWeatherStation_r4-5-F_Cu.gbr",
+      "Path": "destinationWeatherStation_v4-5-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-B_Cu.gbr",
+      "Path": "destinationWeatherStation_v4-5-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-F_Paste.gbr",
+      "Path": "destinationWeatherStation_v4-5-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-F_Silkscreen.gbr",
+      "Path": "destinationWeatherStation_v4-5-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-B_Silkscreen.gbr",
+      "Path": "destinationWeatherStation_v4-5-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-F_Mask.gbr",
+      "Path": "destinationWeatherStation_v4-5-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-B_Mask.gbr",
+      "Path": "destinationWeatherStation_v4-5-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-User_Drawings.gbr",
+      "Path": "destinationWeatherStation_v4-5-User_Drawings.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-User_Comments.gbr",
+      "Path": "destinationWeatherStation_v4-5-User_Comments.gbr",
       "FileFunction": "Other,User",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-Edge_Cuts.gbr",
+      "Path": "destinationWeatherStation_v4-5-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-F_Fab.gbr",
+      "Path": "destinationWeatherStation_v4-5-F_Fab.gbr",
       "FileFunction": "AssemblyDrawing,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "destinationWeatherStation_r4-5-B_Fab.gbr",
+      "Path": "destinationWeatherStation_v4-5-B_Fab.gbr",
       "FileFunction": "AssemblyDrawing,Bot",
       "FilePolarity": "Positive"
     }
@@ -107,7 +107,7 @@
     },
     {
       "Type": "SolderMask",
-      "Color": "Black",
+      "Color": "R80G0B80",
       "Thickness": 0.0254,
       "Material": "Liquid Ink",
       "Name": "Top Solder Mask"
@@ -132,7 +132,7 @@
     },
     {
       "Type": "SolderMask",
-      "Color": "Black",
+      "Color": "R80G0B80",
       "Thickness": 0.0254,
       "Material": "Liquid Ink",
       "Name": "Bottom Solder Mask"
