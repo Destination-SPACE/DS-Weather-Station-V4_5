@@ -9,9 +9,9 @@
 import sphinx_rtd_theme
 
 project = 'DS-Weather-Station-V4.5'
-copyright = '2024, Destination SPACE Inc.'
+copyright = '2026, Destination SPACE Inc.'
 author = 'Destination SPACE Inc.'
-release = '0.2.0'
+release = '0.3.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -30,7 +30,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 source_suffix = '.rst'
 master_doc = 'index'
 project = 'Destination Weather Station v4.5'
-copyright = '2024, Destination SPACE Inc.'
+copyright = '2026, Destination SPACE Inc.'
 html_show_sphinx = False
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
