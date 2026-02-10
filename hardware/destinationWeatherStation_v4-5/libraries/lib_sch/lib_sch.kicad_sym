@@ -194,6 +194,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(symbol "BME280_1_1"
 			(rectangle
 				(start -10.16 10.16)
@@ -424,6 +433,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "connector"
 			(at 0 0 0)
 			(effects
@@ -593,6 +611,15 @@
 			)
 		)
 		(property "MPN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
 			(at 0 0 0)
 			(effects
 				(font
@@ -950,6 +977,15 @@
 			)
 		)
 		(property "MPN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
 			(at 0 0 0)
 			(effects
 				(font
@@ -1457,6 +1493,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_fp_filters" "SOT?23*"
 			(at 0 0 0)
 			(effects
@@ -1773,6 +1818,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(symbol "OLED_module_0_1"
 			(rectangle
 				(start -6.35 6.35)
@@ -1920,6 +1974,15 @@
 			)
 		)
 		(property "MPN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
 			(at 0 0 0)
 			(effects
 				(font
@@ -2298,6 +2361,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(symbol "PTS645SK50SMTR92LFS_0_0"
 			(polyline
 				(pts
@@ -2562,6 +2634,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "Jumper"
 			(at 0 0 0)
 			(effects
@@ -2774,6 +2855,15 @@
 			)
 		)
 		(property "MPN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
 			(at 0 0 0)
 			(effects
 				(font
@@ -3089,6 +3179,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Tolerance" "TOL"
 			(at 1.905 -1.27 0)
 			(do_not_autoplace)
@@ -3254,6 +3353,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Tolerance" "TOL"
 			(at 1.27 0 0)
 			(do_not_autoplace)
@@ -3396,6 +3504,15 @@
 			)
 		)
 		(property "MPN" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
 			(at 0 0 0)
 			(effects
 				(font
