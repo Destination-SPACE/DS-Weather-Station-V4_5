@@ -12,7 +12,7 @@
 | 6 | 1 | U1 | XIAO RP2040 | [XIAO RP2040](https://wiki.seeedstudio.com/XIAO-RP2040/) | Seeed Studio | XIAO RP2040 | N/A |
 | 7 | 1 | U2 | BME280 | [BME280](../datasheets/BST-BME280.pdf) | Bosch Sensortec | BME280 | 2.5x2.5mm LGA |
 | 8 | 1 | U3 | OLED | [HS96L03W2C03](../datasheets/HS-HS96L03W2C03.pdf) | SHENZHEN HANSHENG INDUSTRAIL CO. | HS96L03W2C03 | N/A |
-| 9 | 1 | SW1 | SS-12F44-G5 | [SS-12F44-G5](../datasheets/SS-12D07-VG_GA_PA.pdf) | C&K | SS-12D07-VG 4 NS GA PA | N/A |
+| 9 | 1 | SW1 | OS102011MS2QN1 | [OS102011MS2QN1](https://www.ckswitches.com/media/1428/os.pdf) | C&K | OS102011MS2QN1 | N/A |
 | 10 | 4 | SW2, SW3, SW4, SW5 | PTS647SM38SMTR2LFS | [PTS647SM38SMTR2LFS](../datasheets/C&K-PTS647.pdf) | C&K | PTS 647 SM38 SMTR2 LFS | N/A |
 | 11 | 1 | J1 | S2B-PH-SM4 | [JST-PH](../datasheets/JST-PH-Connectors.pdf) | JST Sales America Inc. | S2B-PH-SM4-TB(LF)(SN) | N/A |
 | 12 | 1 | J2 | MEM2061 | [MEM2061](../datasheets//GCT-MEM2061.pdf) | GCT | MEM2061-01-188-00-A | N/A |
