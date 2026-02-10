@@ -11,7 +11,7 @@ All hardware files can be found [here](hardware/destinationWeatherStation_v4-5/)
 ## 💻 Software
 All program files can be found [here](software)
 ## 🗂️ Documentation
-Documentation for the weather station can be found [here](https://destination-space.gitlab.io/ds-weather-station-v4.5/)
+Documentation for the weather station can be found [here](https://destination-space.github.io/DS-Weather-Station-V4_5/)
 ## Licenses
 Each of the above sections are individually licensed. Terms and conditions apply within their respective folders.
 
