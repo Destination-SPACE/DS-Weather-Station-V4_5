@@ -1,4 +1,4 @@
-.. Copyright 2024 Destination SPACE Inc.
+.. Copyright 2026 Destination SPACE Inc.
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 Full Code Sketch
 ================
 
-The `Full Code <https://gitlab.com/Destination-SPACE/ds-weather-station-v4.5/-/blob/main/software/Full_Code/Full_Code.ino>`_ sketch incorporates all of the components of the weather station, including data recording. This has all the menus of the `Demo <https://gitlab.com/Destination-SPACE/ds-weather-station-v4.5/-/blob/main/software/Demo/Demo.ino>`_ sketch as well as a menu used to start and stop data recording.
+The `Full Code <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Full_Code/Full_Code.ino>`_ sketch incorporates all of the components of the weather station, including data recording. This has all the menus of the `Demo <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Demo/Demo.ino>`_ sketch as well as a menu used to start and stop data recording.
 
 Program Overview
 ----------------

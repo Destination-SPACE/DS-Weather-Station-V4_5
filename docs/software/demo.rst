@@ -1,4 +1,4 @@
-.. Copyright 2024 Destination SPACE Inc.
+.. Copyright 2026 Destination SPACE Inc.
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 Demo Sketch
 ===========
 
-The `Demo <https://gitlab.com/Destination-SPACE/ds-weather-station-v4.5/-/blob/main/software/Demo/Demo.ino>`_ sketch is used as an introductory program to most of the features on the weather station. This includes scrollable menus for all sensors.
+The `Demo <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Demo/Demo.ino>`_ sketch is used as an introductory program to most of the features on the weather station. This includes scrollable menus for all sensors.
 
 There is no data recording in this example.
 

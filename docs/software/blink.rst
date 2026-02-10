@@ -1,4 +1,4 @@
-.. Copyright 2024 Destination SPACE Inc.
+.. Copyright 2026 Destination SPACE Inc.
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 Blink Sketch
 ============
 
-The `Blink <https://gitlab.com/Destination-SPACE/ds-weather-station-v4.5/-/blob/main/software/Blink/Blink.ino>`_ sketch is used as a beginners program and to test the on-board RGB LED and NeoPixel.
+The `Blink <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Blink/Blink.ino>`_ sketch is used as a beginners program and to test the on-board RGB LED and NeoPixel.
 
 Libraries
 ---------
