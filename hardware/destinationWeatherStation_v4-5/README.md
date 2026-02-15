@@ -6,8 +6,7 @@ View schematic and PCB files with [KiCanvas](https://kicanvas.org/?github=https%
 
 ## Directory
 ### [🧾 Bill of Materials](bom/bom.md)
-### [📄 Datasheets](datasheets)
-### [📐 Gerbers](gerber)
-### [📰 Schematics](pdf)
+### [📐 Gerbers](manufacturing/gerbers)
+### [📰 Schematics](manufacturing/destinationWeatherStation_v4-5.pdf)
 
 Licensed under [CERN-OHL-P](LICENSE)
