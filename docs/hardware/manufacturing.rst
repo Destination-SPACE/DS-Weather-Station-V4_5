@@ -24,25 +24,26 @@ To complete the kit, a few additional components will need to be sourced as thes
    :header-rows: 1
 
    * - Component
-     - XIAO RP2040
+     - Manufacturer
+     - Manufacturer Part Number
+     - Link
+
+   * - XIAO RP2040
      - SPDT slide switch
      - 128x64 SSD1315 OLED display
      - 3x AAA Battery holder
 
-   * - Manufacturer
-     - Seeed Studio
+   * - Seeed Studio
      - C&K
      - HS
      - MYOUNG
 
-   * - Manufacturer Part Number
-     - XIAO RP2040
+   * - XIAO RP2040
      - OS102011MS2QN1
      - HS96L03W2C03
      - BH-AAA-B1AJ022
    
-   * - Link
-     - https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
+   * - https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
      - https://www.lcsc.com/product-detail/C221829.html
      - https://www.lcsc.com/product-detail/C5248080.html
      - https://www.lcsc.com/product-detail/C5290194.html
@@ -54,11 +55,11 @@ JLCPCB handles the manufacturng and assembly of the weather station PCB.
 
 1. Download the following files.
 
-- `Gerbers <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_gerbers.zip>`
-- `Bill of materials <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_bom.csv>`
-- `Component placement <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_cpl.csv>`
+- `Gerbers <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_gerbers.zip>`_
+- `Bill of materials <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_bom.csv>`_
+- `Component placement <https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/hardware/destinationWeatherStation_v4-5/manufacturing/jlcpcb_files/jlcpcb_cpl.csv>`_
 
-2. Go to `JLCPCB.com <https://cart.jlcpcb.com/quote>`
+2. Go to `JLCPCB.com <https://cart.jlcpcb.com/quote>`_
 
 3. Click *Add gerber file* and upload the `jlcpcb_gerbers.zip` file
 
