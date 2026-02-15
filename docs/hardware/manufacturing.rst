@@ -29,23 +29,23 @@ To complete the kit, a few additional components will need to be sourced as thes
      - Link
 
    * - XIAO RP2040
-     - SPDT slide switch
-     - 128x64 SSD1315 OLED display
-     - 3x AAA Battery holder
+     - Seeed Studio
+     - XIAO RP2040
+     - https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
 
-   * - Seeed Studio
+   * - SPDT slide switch
      - C&K
-     - HS
-     - MYOUNG
-
-   * - XIAO RP2040
      - OS102011MS2QN1
-     - HS96L03W2C03
-     - BH-AAA-B1AJ022
-   
-   * - https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html
      - https://www.lcsc.com/product-detail/C221829.html
+
+   * - 128x64 SSD1315 OLED display
+     - HS
+     - HS96L03W2C03
      - https://www.lcsc.com/product-detail/C5248080.html
+
+   * - 3x AAA Battery holder
+     - MYOUNG
+     - BH-AAA-B1AJ022
      - https://www.lcsc.com/product-detail/C5290194.html
 
 Ordering
