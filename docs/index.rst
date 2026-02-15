@@ -82,6 +82,7 @@ Contents
    :caption: Miscellaneous
    :maxdepth: 2
 
+   hardware/manufacturing
    FAQ <faq/index>
 
 .. * :ref:`genindex`
