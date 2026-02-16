@@ -193,9 +193,11 @@ Now, the data can be interpreted to get the desired weather parameters. With the
 
 Heat index is calculated using `dry-bulb temperature <https://en.wikipedia.org/wiki/Dry-bulb_temperature>`_ and relative humidity. The formula used to calculate heat index was first derived in `The Assessment of Sultriness. Part I: A Temperature-Humidity Index Based on Human Physiology and Clothing Science <https://journals.ametsoc.org/view/journals/apme/18/7/1520-0450_1979_018_0861_taospi_2_0_co_2.xml>`_ by R.G. Steadman in 1979. His results were then interpreted by the National Weather Service in technical report `SR 90-23 <https://www.weather.gov/media/ffc/ta_htindx.PDF>`_ in 1990 to be approximated into an equation.
 
-.. math:: HI = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot RH - 0.22375541 \cdot T \cdot RH - 6.83783 \cdot 10^(-3) \cdot T^2 - 5.481717 \cdot 10^(-2) \cdot RH^2 + 1.22874 \cdot 10^(-3) \cdot T^2 \cdot RH + 8.5282 \cdot 10 \cdot (-4) \cdot T \cdot RH^2 - 1.99 \cdot 10^(-6) \cdot T^2 \cdot RH^2
+.. math:: 
    :label: Heat-index equation
    :nowrap:
+
+   \(HI = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot RH - 0.22375541 \cdot T \cdot RH - 6.83783 \cdot 10^(-3) \cdot T^2 - 5.481717 \cdot 10^(-2) \cdot RH^2 + 1.22874 \cdot 10^(-3) \cdot T^2 \cdot RH + 8.5282 \cdot 10 \cdot (-4) \cdot T \cdot RH^2 - 1.99 \cdot 10^(-6) \cdot T^2 \cdot RH^2\)
 
 
 Where T is temperature in Fahrenheit and RH is relative humidity.
