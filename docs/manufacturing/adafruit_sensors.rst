@@ -31,40 +31,40 @@ Below is a list of the components needed to build a classroom set of environment
     - Adafruit
     - 5187
     - 7
-    - https://www.adafruit.com/product/5187
+    - `https://www.adafruit.com/product/5187`
 
   * - ENS160 - MOX Gas Sensor
     - Adafruit
     - 5606
     - 8
-    - https://www.adafruit.com/product/5606
+    - `https://www.adafruit.com/product/5606`
 
   * - VEML7700 - Lux Sensor
     - Adafruit
     - 4162
     - 8
-    - https://www.adafruit.com/product/4162
+    - `https://www.adafruit.com/product/4162`
 
   * - LTR390 - UV Light Sensor
     - Adafruit
     - 4831
     - 8
-    - https://www.adafruit.com/product/4831
+    - `https://www.adafruit.com/product/4831`
 
   * - STEMMA QT JST SH 4-Pin Cable - 50mm
     - Adafruit
     - 4399
     - 24
-    - https://www.adafruit.com/product/4399
+    - `https://www.adafruit.com/product/4399`
 
   * - STEMMA QT JST SH 4-Pin Cable - 100mm
     - Adafruit
     - 4210
     - 12
-    - https://www.adafruit.com/product/4210
+    - `https://www.adafruit.com/product/4210`
 
   * - Adafruit Swirly Aluminum Mounting Grid - 5x5
     - Adafruit
     - 5779
     - 8
-    - https://www.adafruit.com/product/5779
+    - `https://www.adafruit.com/product/5779`
