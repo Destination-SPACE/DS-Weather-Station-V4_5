@@ -6568,6 +6568,7 @@
 	(symbol
 		(lib_id "lib_sch:Resistor_Jumper_3_Open")
 		(at 138.43 116.84 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7814,6 +7815,7 @@
 	(symbol
 		(lib_id "lib_sch:Resistor_Jumper_3_Open")
 		(at 156.21 116.84 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
