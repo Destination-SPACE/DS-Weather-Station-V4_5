@@ -19,7 +19,7 @@ Adafruit Expansion Sensors
 Below is a list of the components needed to build a classroom set of environmental sensors
 
 .. list-table::
-  : header-rows: 1
+  :header-rows: 1
 
   * - Component
     - Manufacturer
