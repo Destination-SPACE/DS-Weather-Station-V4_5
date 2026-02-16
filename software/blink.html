@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blink Sketch &mdash; Destination Weather Station v4.5 0.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensor Test Sketch" href="sensor-test.html" />
+    <link rel="prev" title="Overview of Software" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Destination Weather Station v4.5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/the-kit.html">What is in the Kit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/assembly.html">Destination Weather Station v4.5 Assembly</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install-arduino-ide.html">Installing Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-arduino-ide.html#software-configuration">Software Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/bme280.html">BME280</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ens160.html">ENS160</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ltr390.html">LTR390</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/scd40.html">SCD40</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/veml7700.html">VEML7700</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Overview of Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview of Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Blink Sketch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#libraries">Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-function">Setup Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loop-function">Loop Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html">Demo Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="full-code.html">Full Code Sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Blink Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-function">Setup Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loop-function">Loop Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="full-code.html">Full Code Sketch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../activities/index.html">Overview of Sensor Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Destination Weather Station v4.5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Overview of Software</a></li>
+      <li class="breadcrumb-item active">Blink Sketch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/blink.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="blink-sketch">
+<span id="id1"></span><h1>Blink Sketch<a class="headerlink" href="#blink-sketch" title="Link to this heading"></a></h1>
+<p>The <a class="reference external" href="https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Blink/Blink.ino">Blink</a> sketch is used as a beginners program and to test the on-board RGB LED and NeoPixel.</p>
+<section id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Link to this heading"></a></h2>
+<p>The Blink Sketch has only one required library. This library is the <a class="reference external" href="https://github.com/adafruit/Adafruit_NeoPixel">Adafruit NeoPixel Library</a>. This is used to send commands to the NeoPixel RGB LED on the Seeeduino XIAO.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="hardware-definitions">
+<h2>Hardware Definitions<a class="headerlink" href="#hardware-definitions" title="Link to this heading"></a></h2>
+<p>Several hardware definitions need to be defined to use the RBG LED and the NeoPixel. These are defined by assigning each variable a General Purpose Input-Output (GPIO) pin on the XIAO and any other criteria specified by the NeoPixel library. What these definitions do is define the red, green, and blue pins of the normal RGB LED a GPIO pin, define the power and signal pin for the NeoPixel, and define the number of NeoPixels on the board.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define RGB_R 17</span>
+<span class="cp">#define RGB_G 16</span>
+<span class="cp">#define RGB_B 25</span>
+<span class="cp">#define NEOPIXEL_PWR 11</span>
+<span class="cp">#define NEOPIXEL_PIN 12</span>
+<span class="cp">#define NEOPIXEL_NUM 1</span>
+</pre></div>
+</div>
+<p>Following the hardware definitions, the information specified above needs to be defined in the NeoPixel definition function</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Adafruit_NeoPixel</span><span class="w"> </span><span class="nf">pixels</span><span class="p">(</span><span class="n">NEOPIXEL_NUM</span><span class="p">,</span><span class="w"> </span><span class="n">NEOPIXEL_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">NEO_GRB</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">NEO_KHZ800</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="setup-function">
+<h2>Setup Function<a class="headerlink" href="#setup-function" title="Link to this heading"></a></h2>
+<p>The next step is to initialize the LEDs for the primary loop function. This is done by starting the NeoPixel function, initializing the power and signal pins, and defining the RGB LEDs pins as outputs.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">//Initialize NeoPixel</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">NEOPIXEL_PWR</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">NEOPIXEL_PWR</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">//Initialize RGB LED</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_R</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_G</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_B</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="loop-function">
+<h2>Loop Function<a class="headerlink" href="#loop-function" title="Link to this heading"></a></h2>
+<p>The final step is to send the commands to the NeoPixel and RGB LED. This is done by first clearing the NeoPixel’s stored data, defining the color, and sending the neopixel the data. Additionally, there is a custom function to easily control the color of the RGB LED. This works by passing the red, green, and blue values to the function <code class="docutils literal notranslate"><span class="pre">setColor()</span></code>. An example of the NeoPixel code and the RGB LED can be found below</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">));</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span><span class="w"> </span><span class="c1">// How long the NeoPixel stays on</span>
+<span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">setColor</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setColor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_GRN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_RED</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_BLU</span><span class="p">){</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_R</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_RED</span><span class="p">);</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_G</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_GRN</span><span class="p">);</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_B</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_BLU</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="full-code">
+<h2>Full Code<a class="headerlink" href="#full-code" title="Link to this heading"></a></h2>
+<p>Below is the full Blink example sketch</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="c1"> // Import Adafruit NeoPixel library</span>
+
+<span class="c1">//Define Hardware</span>
+<span class="cp">#define RGB_R 17</span>
+<span class="cp">#define RGB_G 16</span>
+<span class="cp">#define RGB_B 25</span>
+<span class="cp">#define NEOPIXEL_PWR 11</span>
+<span class="cp">#define NEOPIXEL_PIN 12</span>
+<span class="cp">#define NEOPIXEL_NUM 1</span>
+
+<span class="n">Adafruit_NeoPixel</span><span class="w"> </span><span class="nf">pixels</span><span class="p">(</span><span class="n">NEOPIXEL_NUM</span><span class="p">,</span><span class="w"> </span><span class="n">NEOPIXEL_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">NEO_GRB</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">NEO_KHZ800</span><span class="p">);</span><span class="w"> </span><span class="c1">// Define NeoPixel</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">//Initialize NeoPixel</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">NEOPIXEL_PWR</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">NEOPIXEL_PWR</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">//Initialize RGB LED</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_R</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_G</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RGB_B</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">));</span>
+<span class="w">   </span><span class="n">setColor</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">);</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">));</span>
+<span class="w">   </span><span class="n">setColor</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">);</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">233</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">));</span>
+<span class="w">   </span><span class="n">setColor</span><span class="p">(</span><span class="mi">233</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w"> </span><span class="mi">205</span><span class="p">);</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">233</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">));</span>
+<span class="w">   </span><span class="n">setColor</span><span class="p">(</span><span class="mi">233</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">);</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">));</span>
+<span class="w">   </span><span class="n">setColor</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">);</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">pixels</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Function to change color of RGB LED</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setColor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_GRN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_RED</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VAL_BLU</span><span class="p">){</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_R</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_RED</span><span class="p">);</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_G</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_GRN</span><span class="p">);</span>
+<span class="w">   </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">RGB_B</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">VAL_BLU</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Overview of Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sensor-test.html" class="btn btn-neutral float-right" title="Sensor Test Sketch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Destination SPACE Inc..</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensor Test Sketch &mdash; Destination Weather Station v4.5 0.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Demo Sketch" href="demo.html" />
+    <link rel="prev" title="Blink Sketch" href="blink.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Destination Weather Station v4.5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/the-kit.html">What is in the Kit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/assembly.html">Destination Weather Station v4.5 Assembly</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install-arduino-ide.html">Installing Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-arduino-ide.html#software-configuration">Software Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/bme280.html">BME280</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ens160.html">ENS160</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ltr390.html">LTR390</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/scd40.html">SCD40</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/veml7700.html">VEML7700</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Overview of Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview of Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="blink.html">Blink Sketch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sensor Test Sketch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#libraries">Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-sensor-functions">Define Sensor Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-data-types">Define Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-function">Setup Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loop-function">Loop Function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bme280">BME280</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ens160">ENS160</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ltr390">LTR390</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#veml7700">VEML7700</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scd40">SCD40</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html">Demo Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="full-code.html">Full Code Sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blink.html">Blink Sketch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sensor Test Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#define-sensor-functions">Define Sensor Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#define-data-types">Define Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-function">Setup Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loop-function">Loop Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bme280">BME280</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ens160">ENS160</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ltr390">LTR390</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#veml7700">VEML7700</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scd40">SCD40</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="full-code.html">Full Code Sketch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../activities/index.html">Overview of Sensor Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Destination Weather Station v4.5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Overview of Software</a></li>
+      <li class="breadcrumb-item active">Sensor Test Sketch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/sensor-test.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sensor-test-sketch">
+<span id="sensor-test"></span><h1>Sensor Test Sketch<a class="headerlink" href="#sensor-test-sketch" title="Link to this heading"></a></h1>
+<p>The <a class="reference external" href="https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Sensor_Test/Sensor_Test.ino">Sensor Test</a> sketch is used to make sure the sensors on the weather station are working correctly. Use this sketch as the first program to upload after the <a class="reference external" href="https://github.com/Destination-SPACE/DS-Weather-Station-V4_5/blob/main/software/Blink/Blink.ino">Blink</a> sketch.</p>
+<section id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Link to this heading"></a></h2>
+<p>For the Sensor Test sketch, many more libraries are required. These can be split into two categories; System libraries and sensor libraries. In this example only one system library is required, which is the <a class="reference external" href="https://docs.arduino.cc/learn/communication/wire/#wire-library">Wire Library</a>. This is a default Arduino library and is used to communicate with sensors on the Inter-Integrated Circuit (I2C) protocol. More details about the protocol can be found <a class="reference external" href="https://docs.arduino.cc/learn/communication/wire/">here</a>.</p>
+<p>The libraries required to use all of the sensors on your weather stations and for the classroom expansion sensors have been pre-installed. A list of the libraries are below.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Import system libraries</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+
+<span class="c1">//Import sensor libraries</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_BME280.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_LTR390.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_Sensor.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_VEML7700.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ScioSense_ENS160.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SensirionI2CScd4x.h&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="hardware-definitions">
+<h2>Hardware Definitions<a class="headerlink" href="#hardware-definitions" title="Link to this heading"></a></h2>
+<p>Only one hardware definition is required for this example. This defines mean sea-level pressure, which is used to calculate an approximate value for altitude using temperature and pressure. By default, this value is set to 1013.25 hPa. You are welcome to change this value to the current sea-level pressure in your region. Click <a href="#id3"><span class="problematic" id="id4">`here &lt;&gt;`_</span></a> to find out more about calculating barometric altitude.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SEALEVELPRESSURE_HPA (1013.25)</span>
+</pre></div>
+</div>
+</section>
+<section id="define-sensor-functions">
+<h2>Define Sensor Functions<a class="headerlink" href="#define-sensor-functions" title="Link to this heading"></a></h2>
+<p>Several sensor functions need to be defined to get the sensors to work. This ensures that each sensor is communicating to the correct <a class="reference external" href="https://learn.adafruit.com/i2c-addresses/overview">address</a>. These are also used to define which variable you will be using to communicate with the sensor.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Adafruit_BME280</span><span class="w"> </span><span class="n">BME280</span><span class="p">;</span>
+<span class="n">Adafruit_LTR390</span><span class="w"> </span><span class="n">LTR390</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_LTR390</span><span class="p">();</span>
+<span class="n">Adafruit_VEML7700</span><span class="w"> </span><span class="n">VEML7700</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_VEML7700</span><span class="p">();</span>
+<span class="n">ScioSense_ENS160</span><span class="w"> </span><span class="nf">ENS160</span><span class="p">(</span><span class="n">ENS160_I2CADDR_0</span><span class="p">);</span>
+<span class="n">SensirionI2CScd4x</span><span class="w"> </span><span class="n">scd4x</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="define-data-types">
+<h2>Define Data Types<a class="headerlink" href="#define-data-types" title="Link to this heading"></a></h2>
+<p>The next step is to define the data types of each variable. A data type is a way to standardize the formatting of a variable, such as if it is a text value, integer, boolean (True/False), or number with decimal places. Click <a class="reference external" href="https://en.cppreference.com/w/cpp/language/types">here</a> for the definitions of C++ fundamental types.</p>
+<p>Below you can find the data types of the variables used in this example program. The version in the final code file is condensed to save on line-count.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">BME280_TEMP</span><span class="p">;</span><span class="w">      </span><span class="c1">// Temperature</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_PRES</span><span class="p">;</span><span class="w">      </span><span class="c1">// Pressure</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="p">;</span><span class="w">      </span><span class="c1">// Humidity</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_HI</span><span class="p">;</span><span class="w">        </span><span class="c1">// Heat-index</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_ALT</span><span class="p">;</span><span class="w">       </span><span class="c1">// Barometric altitude</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ENS160_AQI</span><span class="p">;</span><span class="w">       </span><span class="c1">// Air Quality Index</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ENS160_AQI_PREV</span><span class="p">;</span><span class="w">  </span><span class="c1">// Previous AQI value</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ENS160_TVOC</span><span class="p">;</span><span class="w">      </span><span class="c1">// Total Volatile Organic Compounds</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ENS160_eCO2</span><span class="p">;</span><span class="w">      </span><span class="c1">// Calculated CO2 concentration</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">LTR390_UVI</span><span class="p">;</span><span class="w">       </span><span class="c1">// Ultra-Violet Index</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">LTR390_RAW</span><span class="p">;</span><span class="w">       </span><span class="c1">// Raw UV data</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">VEML7700_ALS</span><span class="p">;</span><span class="w">     </span><span class="c1">// Ambient light data</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">VEML7700_WHITE</span><span class="p">;</span><span class="w">   </span><span class="c1">// How much of the incoming light is white</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">VEML7700_LUX</span><span class="p">;</span><span class="w">     </span><span class="c1">// Ambient light intensity</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">SCD40_CO2</span><span class="p">;</span><span class="w">        </span><span class="c1">// Measured CO2 concentration</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">SCD40_TEMP</span><span class="p">;</span><span class="w">       </span><span class="c1">// Temperature data from the CO2 sensor</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">SCD40_HUMD</span><span class="p">;</span><span class="w">       </span><span class="c1">// Humidity data from the CO2 sensor</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">clock_timer</span><span class="p">;</span><span class="w">        </span><span class="c1">// Time between data recordings</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">hh</span><span class="p">;</span><span class="w">                 </span><span class="c1">// hours elapsed</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">mm</span><span class="p">;</span><span class="w">                 </span><span class="c1">// minutes elapsed</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span><span class="w">                 </span><span class="c1">// seconds elapsed</span>
+
+<span class="kt">uint16_t</span><span class="w"> </span><span class="n">SCD40_CO2_RAW</span><span class="p">;</span><span class="w"> </span><span class="c1">// Raw CO2 data</span>
+</pre></div>
+</div>
+</section>
+<section id="setup-function">
+<h2>Setup Function<a class="headerlink" href="#setup-function" title="Link to this heading"></a></h2>
+<p>The next section is for the setup function. This is where all of the sensors are initialized and confirmed if they are connected or not. Each sensor has a slightly different initialization process, which is determined by the sensor libraries. Essentially, each sensor is checked to see if it is attached; if it is not, then it’s status indicator is set to 0/False. Lastly, a header for all of the data parameters is printed to the serial monitor.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set serial stream to 115200bits/s</span>
+<span class="w">   </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">);</span><span class="w"> </span><span class="c1">// Wait until serial monitor is open</span>
+
+<span class="w">   </span><span class="c1">//Initialize BME280 sensor</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">BME280</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mh">0x76</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Wire</span><span class="p">)){</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">BME280 not found&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">//Initialize ENS160 sensor</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">ENS160</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ENS160</span><span class="p">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">ENS160_OPMODE_STD</span><span class="p">)){</span>
+<span class="w">         </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">ENS160 failed to init&quot;</span><span class="p">);</span>
+<span class="w">         </span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">ENS160</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+<span class="w">         </span><span class="n">ENS160</span><span class="p">.</span><span class="n">measure</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">         </span><span class="n">ENS160_AQI_PREV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getAQI</span><span class="p">();</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="p">{</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">ENS160 not found&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">//Initialize LTR390 sensor</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">LTR390</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">LTR390 not found&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">LTR390_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="p">{</span>
+<span class="w">      </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">LTR390_MODE_UVS</span><span class="p">);</span>
+<span class="w">      </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setGain</span><span class="p">(</span><span class="n">LTR390_GAIN_3</span><span class="p">);</span>
+<span class="w">      </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setResolution</span><span class="p">(</span><span class="n">LTR390_RESOLUTION_16BIT</span><span class="p">);</span>
+<span class="w">      </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setThresholds</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">      </span><span class="n">LTR390</span><span class="p">.</span><span class="n">configInterrupt</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">LTR390_MODE_UVS</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">//Initialize VEML7700 sensor</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">VEML7700</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">VEML7700 not found&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">VEML7700_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="p">{</span>
+<span class="w">      </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">setLowThreshold</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="w">      </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">setHighThreshold</span><span class="p">(</span><span class="mi">20000</span><span class="p">);</span>
+<span class="w">      </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">interruptEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">//Initialize SCD40 sensor</span>
+<span class="w">   </span><span class="n">scd4x</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">Wire</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">stopPeriodicMeasurement</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">scd4x</span><span class="p">.</span><span class="n">startPeriodicMeasurement</span><span class="p">()){</span>
+<span class="w">         </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">SCD40 failed to respond&quot;</span><span class="p">);</span>
+<span class="w">         </span><span class="n">SCD40_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="c1">//Print data table header</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">+==============================================================================+</span><span class="se">\n</span><span class="s">|  TIME  | TEMP | HUM |  HI  | PRES | ALT | CO2 | TVOC |  AQI  |  UVI  |  LUX  |</span><span class="se">\n</span><span class="s">|hh:mm:ss| (°C) | (%) | (°C) | hPa  | (m) |(ppm)|(ppb.)|(0-300)|(0-+11)|(k-lux)|</span><span class="se">\n</span><span class="s">+==============================================================================+&quot;</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">//Set timer variables to zero</span>
+<span class="w">   </span><span class="n">clock_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="n">hh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="n">mm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="loop-function">
+<h2>Loop Function<a class="headerlink" href="#loop-function" title="Link to this heading"></a></h2>
+<p>The loop function is the main portion of the software where the data is collected and displayed. First, the variable for the delay_timer is set to be equal to the current processor clock time (in milliseconds). This is to help the code make sure it is refreshing at the correct rate.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">delay_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The next step is to read from all the individual sensors and preform any relevant calculations. Again, each sensor has it’s own method to collect data.</p>
+<section id="bme280">
+<h3>BME280<a class="headerlink" href="#bme280" title="Link to this heading"></a></h3>
+<p>The Adafruit library for the BME280 makes it simple to collect data. It is a simple read function where you define the target variable and assign the data value to it.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BME280_TEMP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
+<span class="n">BME280_PRES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readPressure</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0F</span><span class="p">;</span>
+<span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+<span class="n">BME280_ALT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readAltitude</span><span class="p">(</span><span class="n">SEALEVELPRESSURE_HPA</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, the data can be interpreted to get the desired weather parameters. With the BME280 weather sensor several parameters can be calculated. The ones featured in this program are <a class="reference external" href="https://en.wikipedia.org/wiki/Dew_point">dew point</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Humidity">absolute humidity</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/Heat_index">heat index</a>. Only the calculation for heat index is active by default, but you can uncomment the dew point and absolute humidity calculations to include them.</p>
+<p>Heat index is calculated using <a class="reference external" href="https://en.wikipedia.org/wiki/Dry-bulb_temperature">dry-bulb temperature</a> and relative humidity. The formula used to calculate heat index was first derived in <a class="reference external" href="https://journals.ametsoc.org/view/journals/apme/18/7/1520-0450_1979_018_0861_taospi_2_0_co_2.xml">The Assessment of Sultriness. Part I: A Temperature-Humidity Index Based on Human Physiology and Clothing Science</a> by R.G. Steadman in 1979. His results were then interpreted by the National Weather Service in technical report <a class="reference external" href="https://www.weather.gov/media/ffc/ta_htindx.PDF">SR 90-23</a> in 1990 to be approximated into an equation.</p>
+<div class="math notranslate nohighlight" id="equation-heat-index-equation">
+HI = -42.379 + 2.04901523*T + 10.14333127*RH - 0.22375541*T*RH - 6.83783*10^(-3)*T^2 - 5.481717*10^(-2)*RH^2 + 1.22874*10^(-3)*T^2*RH + 8.5282*10*(-4)*T*RH^2 - 1.99*10^(-6)*T^2*RH^2
+
+</div><p>Where T is temperature in Fahrenheit and RH is relative humidity.</p>
+<p>Because this is a regression fit, the equation has an error of ±1.3°F.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">log10</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="p">)</span><span class="mf">-2.0</span><span class="p">)</span><span class="o">/</span><span class="mf">0.4343</span><span class="o">+</span><span class="p">(</span><span class="mf">17.62</span><span class="o">*</span><span class="n">BME280_TEMP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">243.12</span><span class="o">+</span><span class="n">BME280_TEMP</span><span class="p">);</span>
+
+<span class="c1">//Uncomment to calculate dew point and absolute humidity</span>
+<span class="c1">//float BME280_DEW_POINT = 243.12*h/(17.62-h); // Calculate dew point</span>
+<span class="c1">//float BME280_ABSOLUTE_HUMIDITY = 216.7*(BME280_HUMD/100.0*6.112*exp(17.62*BME280_TEMP/(243.12+BME280_TEMP))/(275.15+BME280_TEMP)); // Calculate absolute humidity</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">BME280_TEMP</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">32.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Convert Celsius to Fahrenheit</span>
+
+<span class="c1">//Calculate heat-index</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-42.379</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2.04901523</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10.14333127</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.22475541</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.00683783</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.05481717</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.00122874</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.00085282</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.00000199</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initial heat-index value</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">13.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">80.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">112.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If RH &lt; 13% and 80 &lt; T &lt; 112</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">13.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="p">)</span><span class="o">/</span><span class="mf">4.0</span><span class="o">*</span><span class="n">sqrtf</span><span class="p">((</span><span class="mf">17.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">95.0</span><span class="p">))</span><span class="o">/</span><span class="mi">17</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">85</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">80.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">87.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If RH &gt; 85% and 80 &lt; T &lt; 87</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">85.0</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="p">(</span><span class="mi">87</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">80.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If HI &lt; 80</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">61.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.2</span><span class="o">*</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">68.0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="mf">0.094</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">BME280_HI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">32.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Convert back to Celsius</span>
+</pre></div>
+</div>
+</section>
+<section id="ens160">
+<h3>ENS160<a class="headerlink" href="#ens160" title="Link to this heading"></a></h3>
+<p>The data collecting method for the ENS160 is very similar to the BME280. The parameters being collected are Air Quality Index (AQI) calculated from the German Federal Environmental Agency model, which is on a scale from 1 - 5, total volatile organic compounds (TVOC), and a calculated measurement of approximate Carbon-Dioxide concentration (eCO2).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ENS160</span><span class="p">.</span><span class="n">measure</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">ENS160_AQI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getAQI</span><span class="p">();</span>
+<span class="n">ENS160_TVOC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getTVOC</span><span class="p">();</span>
+<span class="n">ENS160_eCO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">geteCO2</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>No further calculations need to be completed for this sensor.</p>
+</section>
+<section id="ltr390">
+<h3>LTR390<a class="headerlink" href="#ltr390" title="Link to this heading"></a></h3>
+<p>Just like before, only the data needs to be pulled from the sensor with minimal calculations.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">LTR390_RAW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LTR390</span><span class="p">.</span><span class="n">readUVS</span><span class="p">();</span>
+<span class="n">LTR390_UVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LTR390_RAW</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2300.00</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="veml7700">
+<h3>VEML7700<a class="headerlink" href="#veml7700" title="Link to this heading"></a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">VEML7700_LUX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">readLux</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="scd40">
+<h3>SCD40<a class="headerlink" href="#scd40" title="Link to this heading"></a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">isDataReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reset Data-Ready flag</span>
+<span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">getDataReadyFlag</span><span class="p">(</span><span class="n">isDataReady</span><span class="p">)){</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">isDataReady</span><span class="p">){</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">readMeasurement</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_TEMP</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_HUMD</span><span class="p">)){</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="p">{</span>
+<span class="w">      </span><span class="n">SCD40_CO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="full-code">
+<h2>Full Code<a class="headerlink" href="#full-code" title="Link to this heading"></a></h2>
+<p>Below is the full Sensor Test example sketch</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Import system libraries</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+
+<span class="c1">//Import sensor libraries</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_BME280.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_LTR390.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_Sensor.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_VEML7700.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ScioSense_ENS160.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SensirionI2CScd4x.h&gt;</span>
+
+<span class="cp">#define SEALEVELPRESSURE_HPA (1013.25) </span><span class="c1">//Define sea-level pressure as 1013.25hPa</span>
+
+<span class="c1">//Set sensor functions</span>
+<span class="n">Adafruit_BME280</span><span class="w"> </span><span class="n">BME280</span><span class="p">;</span>
+<span class="n">Adafruit_LTR390</span><span class="w"> </span><span class="n">LTR390</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_LTR390</span><span class="p">();</span>
+<span class="n">Adafruit_VEML7700</span><span class="w"> </span><span class="n">VEML7700</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adafruit_VEML7700</span><span class="p">();</span>
+<span class="n">ScioSense_ENS160</span><span class="w"> </span><span class="nf">ENS160</span><span class="p">(</span><span class="n">ENS160_I2CADDR_0</span><span class="p">);</span>
+<span class="n">SensirionI2CScd4x</span><span class="w"> </span><span class="n">scd4x</span><span class="p">;</span>
+
+<span class="c1">//Define data types</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_TEMP</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_PRES</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_HI</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_ALT</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_AQI</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_AQI_PREV</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_TVOC</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_eCO2</span><span class="p">,</span><span class="w"> </span><span class="n">LTR390_UVI</span><span class="p">,</span><span class="w"> </span><span class="n">LTR390_RAW</span><span class="p">,</span><span class="w"> </span><span class="n">VEML7700_ALS</span><span class="p">,</span><span class="w"> </span><span class="n">VEML7700_WHITE</span><span class="p">,</span><span class="w"> </span><span class="n">VEML7700_LUX</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_CO2</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_TEMP</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_HUMD</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">LTR390_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">VEML7700_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">SCD40_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">clock_timer</span><span class="p">,</span><span class="w"> </span><span class="n">hh</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="n">SCD40_CO2_RAW</span><span class="p">;</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">TVOC_CONCENTRATION_MIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">TVOC_CONCENTRATION_MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set serial stream to 115200bits/s</span>
+<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">);</span><span class="w"> </span><span class="c1">// Wait until serial monitor is open</span>
+
+<span class="c1">//Initialize BME280 sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">BME280</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mh">0x76</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Wire</span><span class="p">)){</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">BME280 not found&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Initialize ENS160 sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ENS160</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ENS160</span><span class="p">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">ENS160_OPMODE_STD</span><span class="p">)){</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">ENS160 failed to init&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">ENS160</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+<span class="w">      </span><span class="n">ENS160</span><span class="p">.</span><span class="n">measure</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">      </span><span class="n">ENS160_AQI_PREV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getAQI</span><span class="p">();</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">ENS160 not found&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Initialize LTR390 sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">LTR390</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">LTR390 not found&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">LTR390_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">LTR390_MODE_UVS</span><span class="p">);</span>
+<span class="w">   </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setGain</span><span class="p">(</span><span class="n">LTR390_GAIN_3</span><span class="p">);</span>
+<span class="w">   </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setResolution</span><span class="p">(</span><span class="n">LTR390_RESOLUTION_16BIT</span><span class="p">);</span>
+<span class="w">   </span><span class="n">LTR390</span><span class="p">.</span><span class="n">setThresholds</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">   </span><span class="n">LTR390</span><span class="p">.</span><span class="n">configInterrupt</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">LTR390_MODE_UVS</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Initialize VEML7700 sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">VEML7700</span><span class="p">.</span><span class="n">begin</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">VEML7700 not found&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">VEML7700_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">setLowThreshold</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="w">   </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">setHighThreshold</span><span class="p">(</span><span class="mi">20000</span><span class="p">);</span>
+<span class="w">   </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">interruptEnable</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Initialize SCD40 sensor</span>
+<span class="n">scd4x</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">Wire</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">stopPeriodicMeasurement</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">scd4x</span><span class="p">.</span><span class="n">startPeriodicMeasurement</span><span class="p">()){</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">SCD40 failed to respond&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">SCD40_STS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Print data table header</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">+==============================================================================+</span><span class="se">\n</span><span class="s">|  TIME  | TEMP | HUM |  HI  | PRES | ALT | CO2 | TVOC |  AQI  |  UVI  |  LUX  |</span><span class="se">\n</span><span class="s">|hh:mm:ss| (°C) | (%) | (°C) | hPa  | (m) |(ppm)|(ppb.)| (1-5) |(0-+11)|(k-lux)|</span><span class="se">\n</span><span class="s">+==============================================================================+&quot;</span><span class="p">);</span>
+
+<span class="c1">//Set timer variables to zero</span>
+<span class="n">clock_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">hh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">mm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">delay_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w"> </span><span class="c1">// Reset delay timer</span>
+
+<span class="c1">//Collect Data from BME280</span>
+<span class="n">BME280_TEMP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
+<span class="n">BME280_PRES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readPressure</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0F</span><span class="p">;</span>
+<span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+<span class="n">BME280_ALT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280</span><span class="p">.</span><span class="n">readAltitude</span><span class="p">(</span><span class="n">SEALEVELPRESSURE_HPA</span><span class="p">);</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">log10</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="p">)</span><span class="mf">-2.0</span><span class="p">)</span><span class="o">/</span><span class="mf">0.4343</span><span class="o">+</span><span class="p">(</span><span class="mf">17.62</span><span class="o">*</span><span class="n">BME280_TEMP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">243.12</span><span class="o">+</span><span class="n">BME280_TEMP</span><span class="p">);</span>
+
+<span class="c1">//Uncomment to calculate dew point and absolute humidity</span>
+<span class="c1">//float BME280_DEW_POINT = 243.12*h/(17.62-h); // Calculate dew point</span>
+<span class="c1">//float BME280_ABSOLUTE_HUMIDITY = 216.7*(BME280_HUMD/100.0*6.112*exp(17.62*BME280_TEMP/(243.12+BME280_TEMP))/(275.15+BME280_TEMP)); // Calculate absolute humidity</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">BME280_TEMP</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">32.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Convert Celsius to Fahrenheit</span>
+
+<span class="c1">//Calculate heat-index</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-42.379</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2.04901523</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10.14333127</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.22475541</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.00683783</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.05481717</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.00122874</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.00085282</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.00000199</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_TEMP_F</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="n">BME280_HUMD</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initial heat-index value</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">13.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">80.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">112.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If RH &lt; 13% and 80 &lt; T &lt; 112</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">13.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="p">)</span><span class="o">/</span><span class="mf">4.0</span><span class="o">*</span><span class="n">sqrtf</span><span class="p">((</span><span class="mf">17.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">95.0</span><span class="p">))</span><span class="o">/</span><span class="mi">17</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">85</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">80.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">87.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If RH &gt; 85% and 80 &lt; T &lt; 87</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">BME280_HUMD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">85.0</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="p">(</span><span class="mi">87</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BME280_TEMP_F</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">80.0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If HI &lt; 80</span>
+<span class="w">   </span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">61.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.2</span><span class="o">*</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">68.0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="o">*</span><span class="mf">0.094</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">BME280_HI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">BME280_HI_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">32.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Convert back to Celsius</span>
+
+<span class="c1">// Retrieve data from ENS160 VOC sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ENS160_STS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">ENS160</span><span class="p">.</span><span class="n">measure</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">   </span><span class="n">ENS160_AQI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getAQI</span><span class="p">();</span><span class="w"> </span><span class="c1">// Get air quality index</span>
+<span class="w">   </span><span class="n">ENS160_TVOC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">getTVOC</span><span class="p">();</span><span class="w"> </span><span class="c1">// Get total volatile organic compound concentration in parts per billion</span>
+<span class="w">   </span><span class="n">ENS160_eCO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENS160</span><span class="p">.</span><span class="n">geteCO2</span><span class="p">();</span><span class="w"> </span><span class="c1">// Get eCO2 measurement, derived from TVOC</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">ENS160_AQI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="n">ENS160_TVOC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="n">ENS160_eCO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Retrieve data from LTR390 UVA sensor</span>
+<span class="k">if</span><span class="p">(</span><span class="n">LTR390_STS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">LTR390</span><span class="p">.</span><span class="n">newDataAvailable</span><span class="p">()){</span>
+<span class="w">   </span><span class="n">LTR390_RAW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LTR390</span><span class="p">.</span><span class="n">readUVS</span><span class="p">();</span>
+<span class="w">   </span><span class="n">LTR390_UVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LTR390_RAW</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2300.00</span><span class="p">;</span><span class="w"> </span><span class="c1">// Calculate UV-index from raw values</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">LTR390_UVI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">VEML7700_STS</span><span class="p">){</span>
+<span class="w">   </span><span class="n">VEML7700_LUX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VEML7700</span><span class="p">.</span><span class="n">readLux</span><span class="p">();</span><span class="w"> </span><span class="c1">// Retrieve data from VEML7700 ALS sensor</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">VEML7700_LUX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Retrieve data from SCD40 CO2 sensors</span>
+<span class="k">if</span><span class="p">(</span><span class="n">SCD40_STS</span><span class="p">){</span>
+<span class="w">   </span><span class="kt">bool</span><span class="w"> </span><span class="n">isDataReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Reset Data-Ready flag</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">getDataReadyFlag</span><span class="p">(</span><span class="n">isDataReady</span><span class="p">)){</span><span class="w"> </span><span class="c1">// Check if there is data available to read</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">isDataReady</span><span class="p">){</span><span class="w"> </span><span class="c1">// If data is ready to be read, read data</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">scd4x</span><span class="p">.</span><span class="n">readMeasurement</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_TEMP</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_HUMD</span><span class="p">)){</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"> </span><span class="c1">// If CO2 data is zero, keep data</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">else</span><span class="p">{</span>
+<span class="w">         </span><span class="n">SCD40_CO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SCD40_CO2_RAW</span><span class="p">);</span><span class="w"> </span><span class="c1">// Cast CO2 unsigned 16bit-integer to type float</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">else</span><span class="p">{</span><span class="w"> </span><span class="c1">// If data is not ready, skip measurement</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">   </span><span class="n">SCD40_CO2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Clock timer</span>
+<span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">clock_timer</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="c1">// Set seconds to how much time has elapsed since first data read</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ss</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">){</span><span class="w"> </span><span class="c1">// If seconds is 60+, add 1 minutes and reset seconds variable</span>
+<span class="w">   </span><span class="n">clock_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">   </span><span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ss</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">   </span><span class="n">mm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">mm</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">){</span><span class="w"> </span><span class="c1">// If minutes is 60+, add 1 hours and reset minutes and seconds</span>
+<span class="w">      </span><span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ss</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">      </span><span class="n">mm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mm</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="w">      </span><span class="n">hh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hh</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w"> </span><span class="c1">// Create 1024-bit buffer for data output</span>
+<span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">|%02d:%02d:%02d| %5.2f|%5.2f| %5.2f|%6.1f|%5.1f| %4.0f| %5.0f|  %5.0f|  %5.2f|%7.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hh</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="p">,</span><span class="w"> </span><span class="n">ss</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_TEMP</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_HUMD</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_HI</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_PRES</span><span class="p">,</span><span class="w"> </span><span class="n">BME280_ALT</span><span class="p">,</span><span class="w"> </span><span class="n">SCD40_CO2</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_TVOC</span><span class="p">,</span><span class="w"> </span><span class="n">ENS160_AQI</span><span class="p">,</span><span class="w"> </span><span class="n">LTR390_UVI</span><span class="p">,</span><span class="w"> </span><span class="n">VEML7700_LUX</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print buffer</span>
+
+<span class="c1">//Idle until it is time for next data read</span>
+<span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">){</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delay_timer</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">   </span><span class="n">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="0">
+<li></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="blink.html" class="btn btn-neutral float-left" title="Blink Sketch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demo.html" class="btn btn-neutral float-right" title="Demo Sketch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Destination SPACE Inc..</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

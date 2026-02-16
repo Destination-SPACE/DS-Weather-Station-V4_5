@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destination Weather Station v4.5 Assembly &mdash; Destination Weather Station v4.5 0.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing Arduino IDE" href="../software/install-arduino-ide.html" />
+    <link rel="prev" title="What is in the Kit?" href="the-kit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Destination Weather Station v4.5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="the-kit.html">What is in the Kit?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Destination Weather Station v4.5 Assembly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#soldering">Soldering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-switch">Power Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xiao-rp2040">XIAO RP2040</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oled-display">OLED Display</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#final-assembly">Final Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#batteries">Batteries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/install-arduino-ide.html">Installing Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/install-arduino-ide.html#software-configuration">Software Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/bme280.html">BME280</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ens160.html">ENS160</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/ltr390.html">LTR390</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/scd40.html">SCD40</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensors/veml7700.html">VEML7700</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview of Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hid.html">Human Interface Devices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Overview of Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/blink.html">Blink Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/demo.html">Demo Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/full-code.html">Full Code Sketch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../activities/index.html">Overview of Sensor Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Destination Weather Station v4.5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Destination Weather Station v4.5 Assembly</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/hardware/assembly.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="destination-weather-station-v4-5-assembly">
+<span id="assembly"></span><h1>Destination Weather Station v4.5 Assembly<a class="headerlink" href="#destination-weather-station-v4-5-assembly" title="Link to this heading"></a></h1>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/weatherstation-overview.png" src="../_images/weatherstation-overview.png" />
+</a>
+<p>The Destination Weather Station v4.5 is preassembled with the majority of the circuit components.</p>
+<p>Before using the weather station, you will need to <a class="reference internal" href="#id1"><span class="std std-ref">solder</span></a> the <a class="reference internal" href="#id2"><span class="std std-ref">XIAO RP2040 microcontroller</span></a>, <a class="reference internal" href="#id3"><span class="std std-ref">OLED display</span></a>, and <span class="xref std std-ref">power switch</span>. Follow the instructions below to solder your weather station. You can then <a class="reference internal" href="#id4"><span class="std std-ref">connect the batteries</span></a> and insert the microSD card.</p>
+<section id="soldering">
+<h2>Soldering<a class="headerlink" href="#soldering" title="Link to this heading"></a></h2>
+<p id="id1">To solder the weather station, follow the instructions below. Tools required to complete these steps are:</p>
+<ul class="simple">
+<li><p>Soldering iron</p></li>
+<li><p>Solder wire</p></li>
+</ul>
+<section id="power-switch">
+<h3>Power Switch<a class="headerlink" href="#power-switch" title="Link to this heading"></a></h3>
+<a class="reference external image-reference" href="assembly.html" id="switch"><img alt="../_images/switchOnly.png" src="../_images/switchOnly.png" />
+</a>
+<p>To solder the power switch to the weather station, insert it into the front side of the board. Flip the board over and solder the pins, starting with the two outer ones.</p>
+</section>
+<section id="xiao-rp2040">
+<h3>XIAO RP2040<a class="headerlink" href="#xiao-rp2040" title="Link to this heading"></a></h3>
+<p id="id2">To solder the XIAO RP2040 to the weather station, begin by inserting the long side of the 1x7 header pins into the weather station board as shown below.</p>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/xiaoPinsOnly.png" src="../_images/xiaoPinsOnly.png" />
+</a>
+<p>Next, flip the weather station over and solder all 14 pins to the weather station.</p>
+<p>Finally, flip the weather station back over and solder the XIAO to the short side of the header pins. After you are done, it should look like the image below.</p>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/xiaoOnly.png" src="../_images/xiaoOnly.png" />
+</a>
+</section>
+<section id="oled-display">
+<h3>OLED Display<a class="headerlink" href="#oled-display" title="Link to this heading"></a></h3>
+<p id="id3">To solder the OLED display to the weather station, you will follow similar procedures to the steps above to solder the XIAO.</p>
+<p>Begin by inserting the long side of the 1x4 header into the weather station board as shown below.</p>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/oledPinsOnly.png" src="../_images/oledPinsOnly.png" />
+</a>
+<p>Next, flip the board over and solder the pins to the back.</p>
+<p>Similarly, flip the board back over and solder the display to the front.</p>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/front.png" src="../_images/front.png" />
+</a>
+</section>
+</section>
+<section id="final-assembly">
+<h2>Final Assembly<a class="headerlink" href="#final-assembly" title="Link to this heading"></a></h2>
+<a class="reference external image-reference" href="assembly.html"><img alt="../_images/iso.png" src="../_images/iso.png" />
+</a>
+<section id="batteries">
+<h3>Batteries<a class="headerlink" href="#batteries" title="Link to this heading"></a></h3>
+<p id="id4">Insert three (3) AAA batteries into the battery pack. Connect the JST-PH connector to the matching connector on the weather station.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="the-kit.html" class="btn btn-neutral float-left" title="What is in the Kit?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../software/install-arduino-ide.html" class="btn btn-neutral float-right" title="Installing Arduino IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Destination SPACE Inc..</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

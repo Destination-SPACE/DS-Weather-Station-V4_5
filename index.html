@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destination Weather Station v4.5 &mdash; Destination Weather Station v4.5 0.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e259d695"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is in the Kit?" href="hardware/the-kit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Destination Weather Station v4.5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hardware/the-kit.html">What is in the Kit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/assembly.html">Destination Weather Station v4.5 Assembly</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/install-arduino-ide.html">Installing Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/install-arduino-ide.html#software-configuration">Software Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sensors/index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/bme280.html">BME280</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/ens160.html">ENS160</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/ltr390.html">LTR390</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/scd40.html">SCD40</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/veml7700.html">VEML7700</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hardware/index.html">Overview of Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/index.html">Overview of Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/blink.html">Blink Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/demo.html">Demo Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/full-code.html">Full Code Sketch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="activities/index.html">Overview of Sensor Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Destination Weather Station v4.5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Destination Weather Station v4.5</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="destination-weather-station-v4-5">
+<h1>Destination Weather Station v4.5<a class="headerlink" href="#destination-weather-station-v4-5" title="Link to this heading"></a></h1>
+<p>An Open Source Remote Sensing Platform for National Taiwan Normal University</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<a class="reference external image-reference" href="index.html"><img alt="_images/front.png" src="_images/front.png" />
+</a>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hardware/the-kit.html">What is in the Kit?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/the-kit.html#kit-contents">Kit Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/assembly.html">Destination Weather Station v4.5 Assembly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/assembly.html#soldering">Soldering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/assembly.html#final-assembly">Final Assembly</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/install-arduino-ide.html">Installing Arduino IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/install-arduino-ide.html#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/install-arduino-ide.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/install-arduino-ide.html#software-configuration">Software Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/install-arduino-ide.html#board-manager">Board Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/install-arduino-ide.html#code-libraries">Code Libraries</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sensors/index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/bme280.html">BME280</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors/bme280.html#humidity">Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/bme280.html#pressure">Pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/bme280.html#temperature">Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/bme280.html#functional-block-diagram">Functional Block Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/ens160.html">ENS160</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ens160.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ens160.html#tvoc">TVOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ens160.html#eco2">eCO2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ens160.html#aqi">AQI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/ltr390.html">LTR390</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#ambient-light-specifications">Ambient Light Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#uvs-specifications">UVS Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#als-sensor">ALS Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#uvs-sensor">UVS Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#the-ultra-violet-spectrum">The Ultra-Violet Spectrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#uva">UVA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#uvb">UVB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/ltr390.html#uvc">UVC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/scd40.html">SCD40</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors/scd40.html#co2-sensing-performance">CO2 Sensing Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/scd40.html#humidity-sensing-performance">Humidity Sensing Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/scd40.html#temperature-sensing-performance">Temperature Sensing Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/scd40.html#measuring-co2">Measuring CO2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors/veml7700.html">VEML7700</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors/veml7700.html#specifications">Specifications</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hardware/index.html">Overview of Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/power.html">Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/index.html">Overview of Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html">Blink Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/demo.html">Demo Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/full-code.html">Full Code Sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/blink.html">Blink Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html#setup-function">Setup Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html#loop-function">Loop Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/blink.html#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/sensor-test.html">Sensor Test Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#hardware-definitions">Hardware Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#define-sensor-functions">Define Sensor Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#define-data-types">Define Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#setup-function">Setup Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#loop-function">Loop Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/sensor-test.html#full-code">Full Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/demo.html">Demo Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/demo.html#button-menu">Button Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software/full-code.html">Full Code Sketch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/full-code.html#program-overview">Program Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/full-code.html#button-menu">Button Menu</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="activities/index.html">Overview of Sensor Activities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/temperature.html">Temperature Activity - Microclimates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/temperature.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/temperature.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/temperature.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/temperature.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/humidity.html">Humidity Activity - Relative vs Absolute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/humidity.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/humidity.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/humidity.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/humidity.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/CO2.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/CO2.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/CO2.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/CO2.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/VOCs.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/VOCs.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/VOCs.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/VOCs.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/ALS.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/ALS.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/ALS.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/ALS.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activities/UVA.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/UVA.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/UVA.html#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activities/UVA.html#discussion-questions">Discussion Questions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hardware/the-kit.html" class="btn btn-neutral float-right" title="What is in the Kit?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Destination SPACE Inc..</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

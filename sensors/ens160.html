@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENS160 &mdash; Destination Weather Station v4.5 0.3.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LTR390" href="ltr390.html" />
+    <link rel="prev" title="BME280" href="bme280.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Destination Weather Station v4.5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/the-kit.html">What is in the Kit?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/assembly.html">Destination Weather Station v4.5 Assembly</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/install-arduino-ide.html">Installing Arduino IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/install-arduino-ide.html#software-configuration">Software Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sensors</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview of Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bme280.html">BME280</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ENS160</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tvoc">TVOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eco2">eCO2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aqi">AQI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ltr390.html">LTR390</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scd40.html">SCD40</a></li>
+<li class="toctree-l1"><a class="reference internal" href="veml7700.html">VEML7700</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Overview of Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/power.html">Power</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/storage.html">Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/hid.html">Human Interface Devices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Overview of Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/blink.html">Blink Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/sensor-test.html">Sensor Test Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/demo.html">Demo Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/full-code.html">Full Code Sketch</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../activities/index.html">Overview of Sensor Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/temperature.html">Temperature Activity - Microclimates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/humidity.html">Humidity Activity - Relative vs Absolute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/CO2.html">Carbon-Dioxide Activity - Photosynthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/VOCs.html">Volatile Organic Compounds Activity - Methane / Ethane TBD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/ALS.html">Ambient Light Activity - Light abortion related to Albedo and climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activities/UVA.html">Ultraviolet Light Activity - Material Adsorption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Manufacturing and Ordering Kits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/index.html">Manufacturing and Ordering Kits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/pcbs.html">Manufacturing PCBs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/adafruit_sensors.html">Adafruit Expansion Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/3d_printing.html">3D Printing Balloon Mounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manufacturing/building_kits.html">Additional Materials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Destination Weather Station v4.5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ENS160</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sensors/ens160.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ens160">
+<span id="id1"></span><h1>ENS160<a class="headerlink" href="#ens160" title="Link to this heading"></a></h1>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/MFG_ENS160.jpg" src="../_images/MFG_ENS160.jpg" />
+</a>
+<p>The ENS160 digital metal-oxide multi-gas sensor measures volatile organic compounds (VOCs), which can be used to measure total VOC content (TVOC), air quality index (AQI), and calculate an approximate value for carbon-dioxide concentration (eCO2).</p>
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TVOC</p></td>
+<td><p>0 - 65,000</p></td>
+<td><p>1</p></td>
+<td><p>ppb</p></td>
+</tr>
+<tr class="row-odd"><td><p>eCO2</p></td>
+<td><p>400 - 65,000</p></td>
+<td><p>1</p></td>
+<td><p>ppm CO2 equivalent</p></td>
+</tr>
+<tr class="row-even"><td><p>AQI-UBA</p></td>
+<td><p>1 to 5</p></td>
+<td><p>1</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>AQI-EPA</p></td>
+<td><p>0 - 500</p></td>
+<td><p>1</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tvoc">
+<h2>TVOC<a class="headerlink" href="#tvoc" title="Link to this heading"></a></h2>
+<p>Total Volatile Organic Compounds (TVOC) is a useful parameter used to determine the quality of the air in a given area. This is incredibly important for urban environments and in indoor settings. This is typically measured in parts-per-billion (ppb), but in polluted environments, can reach into the parts-per-million (ppm) range.</p>
+</section>
+<section id="eco2">
+<h2>eCO2<a class="headerlink" href="#eco2" title="Link to this heading"></a></h2>
+<p>The ENS160 sensor uses an algorithm to calculate an approximate value for carbon-dioxide (CO2) concentration. While the sensor cannot directly measure CO2, it’s algorithm can closely approximate this value, as seen in the graph below.</p>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/ens160_eco2.jpg" src="../_images/ens160_eco2.jpg" />
+</a>
+<p>In the graph, the calculated eCO2 measurement is being compared to a non-dispersive infrared CO2 sensor. It can closely approximate the CO2 concentration, but it is not perfect.</p>
+<p>In the graphs below, ScioSense has provided eCO2 measurement for different environments, such as in a bedroom, kitchen, and bathroom. These graphs show that different conditions, such as closing a window, cooking, or being in a room can increase CO2 concentrations.</p>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/ens160_eco2_bedroom.jpg" src="../_images/ens160_eco2_bedroom.jpg" />
+</a>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/ens160_eco2_kitchen.jpg" src="../_images/ens160_eco2_kitchen.jpg" />
+</a>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/ens160_eco2_bathroom.jpg" src="../_images/ens160_eco2_bathroom.jpg" />
+</a>
+</section>
+<section id="aqi">
+<h2>AQI<a class="headerlink" href="#aqi" title="Link to this heading"></a></h2>
+<p>Air Quality Index (AQI) is the typical parameter used to judge the quality of air and how polluted it is. There are several different scales used to measure this value, but they are all based on the concentration of VOCs. For example, the United States uses the <a class="reference external" href="https://www.airnow.gov/aqi/aqi-basics/">NowCast</a> algorithm developed by the Environmental Protection Agency (EPA) ranging from 0 to 500, the European Union’s <a class="reference external" href="https://airindex.eea.europa.eu/AQI/index.html">European Environment Agency</a> (EEA) uses a scale ranging from 0 to 1250, and Taiwan’s <a class="reference external" href="https://airtw.epa.gov.tw/ENG/Information/Standard/AirQualityIndicator.aspx">Ministry of Environment</a> uses a similar scale to the United States, ranging from 0 to 500. The figures below show each of these indexes.</p>
+<p>Environmental Protection Agency (EPA)</p>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/aqi_us.png" src="../_images/aqi_us.png" />
+</a>
+<p>European Environment Agency (EEA)</p>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/aqi_eu.png" src="../_images/aqi_eu.png" />
+</a>
+<p>Ministry of Environment</p>
+<a class="reference external image-reference" href="ens160.html"><img alt="../_images/aqi_tw.png" src="../_images/aqi_tw.png" />
+</a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bme280.html" class="btn btn-neutral float-left" title="BME280" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ltr390.html" class="btn btn-neutral float-right" title="LTR390" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Destination SPACE Inc..</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
