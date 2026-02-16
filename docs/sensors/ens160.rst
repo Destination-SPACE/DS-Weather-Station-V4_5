@@ -19,7 +19,7 @@ ENS160
 .. image:: ../assets/MFG_ENS160.jpg
       :target: ens160.html
 
-The ENS160 digital metal-oxide multi-gas sensor measures volitile organic compounds (VOCs), which can be used to measure total VOC content (TVOC), air quality index (AQI), and calculate an approximate value for carbon-dioxide concentration (eCO2).
+The ENS160 digital metal-oxide multi-gas sensor measures volatile organic compounds (VOCs), which can be used to measure total VOC content (TVOC), air quality index (AQI), and calculate an approximate value for carbon-dioxide concentration (eCO2).
 
 Specifications
 ~~~~~~~~~~~~~~
@@ -54,18 +54,18 @@ Specifications
 
 TVOC
 ~~~~
-Total Volitile Organic Compounds (TVOC) is a useful parameter used to determine the quality of the air in a given area. This is incredibly important for urban environments and in indoor settings. This is typically measured in parts-per-billion (ppb), but in polluted environments, can reach into the parts-per-million (ppm) range.
+Total Volatile Organic Compounds (TVOC) is a useful parameter used to determine the quality of the air in a given area. This is incredibly important for urban environments and in indoor settings. This is typically measured in parts-per-billion (ppb), but in polluted environments, can reach into the parts-per-million (ppm) range.
 
 eCO2
 ~~~~
-The ENS160 sensor uses an algorythm to calculate an approximate value for carbon-dioxide (CO2) concentration. While the sensor cannot directly measure CO2, it's algorythm can closely approximate this value, as seen in the graph below.
+The ENS160 sensor uses an algorithm to calculate an approximate value for carbon-dioxide (CO2) concentration. While the sensor cannot directly measure CO2, it's algorithm can closely approximate this value, as seen in the graph below.
 
 .. image:: ../assets/ens160_eco2.jpg
    :target: ens160.html
 
-In the graph, the calculated eCO2 measurment is being compared to a nondispersive infrared CO2 sensor. It can closely approximate the CO2 concentration, but it is not perfect.
+In the graph, the calculated eCO2 measurement is being compared to a non-dispersive infrared CO2 sensor. It can closely approximate the CO2 concentration, but it is not perfect.
 
-In the graphs below, ScioSense has provided eCO2 measurments for different environments, such as in a bedroom, kitchen, and bathroom. These graphs show that different conditions, such as closing a window, cooking, or being in a room can increase CO2 concentrations.
+In the graphs below, ScioSense has provided eCO2 measurement for different environments, such as in a bedroom, kitchen, and bathroom. These graphs show that different conditions, such as closing a window, cooking, or being in a room can increase CO2 concentrations.
 
 .. image:: ../assets/ens160_eco2_bedroom.jpg
    :target: ens160.html
@@ -78,7 +78,7 @@ In the graphs below, ScioSense has provided eCO2 measurments for different envir
 
 AQI
 ~~~
-Air Quality Index (AQI) is the typical parameter used to judge the quality of air and how polluted it is. There are several different scales used to measure this value, but they are all based on the concentration of VOCs. For example, the United States uses the `NowCast <https://www.airnow.gov/aqi/aqi-basics/>`_ algorythm developed by the Environmental Protection Agency (EPA) ranging from 0 to 500, the European Union's `European Environment Agency <https://airindex.eea.europa.eu/AQI/index.html>`_ (EEA) uses a scale ranging from 0 to 1250, and Taiwan's `Ministry of Environment <https://airtw.epa.gov.tw/ENG/Information/Standard/AirQualityIndicator.aspx>`_ uses a similar scale to the United States, ranging from 0 to 500. The figures below show each of these indexes.
+Air Quality Index (AQI) is the typical parameter used to judge the quality of air and how polluted it is. There are several different scales used to measure this value, but they are all based on the concentration of VOCs. For example, the United States uses the `NowCast <https://www.airnow.gov/aqi/aqi-basics/>`_ algorithm developed by the Environmental Protection Agency (EPA) ranging from 0 to 500, the European Union's `European Environment Agency <https://airindex.eea.europa.eu/AQI/index.html>`_ (EEA) uses a scale ranging from 0 to 1250, and Taiwan's `Ministry of Environment <https://airtw.epa.gov.tw/ENG/Information/Standard/AirQualityIndicator.aspx>`_ uses a similar scale to the United States, ranging from 0 to 500. The figures below show each of these indexes.
 
 Environmental Protection Agency (EPA)
 

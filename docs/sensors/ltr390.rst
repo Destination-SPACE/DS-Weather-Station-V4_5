@@ -39,7 +39,7 @@ Ambient Light Specifications
      - 18
      - 20
      - Bit
-     - Programable for 13, 16, 17, 18, 19, 20 bit
+     - Programmable for 13, 16, 17, 18, 19, 20 bit
    
    * - Dark Level Count
      - -
@@ -151,4 +151,4 @@ UVB is a the middle band of the UV spectrum and ranges from 315nm to 280nm. UVB 
 UVC
 ~~~
 
-UVB is the highest energy band in the UV spectrum, ranging from 280nm to 100nm. UVC is entrily filtered out by the Earth's atmosphere, so is no danger to life on the surface, but can become a risk durring air travel or in space. UVC is a type of ionizing radiation, meaning it easily kills cells. This is useful for UV disinfection lights.
+UVB is the highest energy band in the UV spectrum, ranging from 280nm to 100nm. UVC is entirely filtered out by the Earth's atmosphere, so is no danger to life on the surface, but can become a risk during air travel or in space. UVC is a type of ionizing radiation, meaning it easily kills cells. This is useful for UV disinfection lights.

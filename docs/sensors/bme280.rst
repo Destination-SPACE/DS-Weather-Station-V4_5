@@ -19,7 +19,7 @@ BME280
 .. image:: ../assets/MFG_BME280.jpg
       :target: bme280.html
 
-The BME280 combined humidity and pressure sensor is a classic device used for accuratly measureing temperature, pressure, and humidity.
+The BME280 combined humidity and pressure sensor is a classic device used for accurately measuring temperature, pressure, and humidity.
 
 Humidity
 ~~~~~~~~
@@ -77,7 +77,7 @@ Temperature
 
 Functional Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Below is a functional block diagram for how the BME280 sensor works. The data for each parameter (humidity, pressure, and temperature) are measured using an analog sensor. The data is then converted from an analog voltage signal to a digital data signal. This data is then passed to the logic side of the sensor which sends and recieves data to/from the host device.
+Below is a functional block diagram for how the BME280 sensor works. The data for each parameter (humidity, pressure, and temperature) are measured using an analog sensor. The data is then converted from an analog voltage signal to a digital data signal. This data is then passed to the logic side of the sensor which sends and receives data to/from the host device.
 
 .. image:: ../assets/bme280BlockDiagram.png
       :target: bme280.html
