@@ -16,12 +16,8 @@
 Manufacturing and Ordering Kits
 ===============================
 
-.. toctree::
-   :caption: Manufacturing and Ordering Kits
-   :maxdepth: 1
-
-   Ordering PCBs <manufacturing/pcbs>
-   Adafruit Expansion Sensors <manufacturing/adafruit_sensors>
-   3D printing Ballon Mounts <manufacturing/3d_printing>
-   Building the Kits <manufacturing/building_kits>
+* :ref:`Ordering PCBs <manufacturing/pcbs>`
+* :ref:`Adafruit Expansion Sensors <manufacturing/adafruit_sensors>`
+* :ref:`3D printing Ballon Mounts <manufacturing/3d_printing>`
+* :ref:`Building the Kits <manufacturing/building_kits>`
    
