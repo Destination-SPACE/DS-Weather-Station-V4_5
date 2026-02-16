@@ -16,8 +16,8 @@
 Manufacturing and Ordering Kits
 ===============================
 
-* :ref:`Ordering PCBs <manufacturing/pcbs>`
-* :ref:`Adafruit Expansion Sensors <manufacturing/adafruit_sensors>`
-* :ref:`3D printing Ballon Mounts <manufacturing/3d_printing>`
-* :ref:`Building the Kits <manufacturing/building_kits>`
+* :ref:`Ordering PCBs <pcbs>`
+* :ref:`Adafruit Expansion Sensors <adafruit_sensors>`
+* :ref:`3D printing Ballon Mounts <3d_printing>`
+* :ref:`Building the Kits <building_kits>`
    
