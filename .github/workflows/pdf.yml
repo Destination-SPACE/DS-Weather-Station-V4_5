@@ -1,0 +1,50 @@
+name: Build PDF Documentation
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-html:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: pip install sphinx sphinx-rtd-theme
+    - name: Build HTML
+      run: |
+        cd docs
+        make html
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/_build/html
+
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install LaTeX dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+    - name: Install Python dependencies
+      run: pip install sphinx sphinx-rtd-theme
+    - name: Build PDF
+      run: |
+        cd docs
+        make latexpdf
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docs-pdf
+        path: docs/_build/latex/*.pdf
