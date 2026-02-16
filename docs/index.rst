@@ -71,7 +71,7 @@ Contents
    :maxdepth: 2
 
    activities/index
-   activities/tempurature
+   activities/temperature
    activities/humidity
    activities/CO2
    activities/VOCs
@@ -83,6 +83,10 @@ Contents
    :maxdepth: 1
 
    manufacturing/index
+   manufacturing/pcbs
+   manufacturing/adafruit_sensors
+   manufacturing/3d_printing
+   manufacturing/building_kits
 
 .. toctree::
    :caption: Miscellaneous
