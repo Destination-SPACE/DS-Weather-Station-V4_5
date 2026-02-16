@@ -11,13 +11,12 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-.. _manufacturing::
+.. _manufacturing:
 
 Manufacturing and Ordering Kits
 ===============================
 
-* :ref:`Ordering PCBs <manufacturing_pcbs>`
+* :ref:`Ordering PCBs <pcbs>`
 * :ref:`Adafruit Expansion Sensors <adafruit_sensors>`
 * :ref:`3D printing Ballon Mounts <3d_printing>`
 * :ref:`Building the Kits <building_kits>`
-   
