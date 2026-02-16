@@ -42,6 +42,3 @@ latex_elements = {
 
 # Paths
 latex_output = 'docs/latex'
-
-pygments_style = 'sphinx'
-highlight_language = 'cpp'
