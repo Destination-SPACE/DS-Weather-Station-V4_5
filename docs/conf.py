@@ -27,7 +27,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 master_doc = 'index'
 project = 'Destination Weather Station v4.5'
 copyright = '2026, Destination SPACE Inc.'
@@ -42,3 +42,6 @@ latex_elements = {
 
 # Paths
 latex_output = 'docs/latex'
+
+pygments_style = 'sphinx'
+highlight_language = 'cpp'
