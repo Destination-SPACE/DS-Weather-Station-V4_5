@@ -44,6 +44,12 @@ Ordering
    - Surface Finish: LeadFree HASL
    - PCB Assembly > PCB Type: Standard
 
+.. image:: assets/jlcpcb_parameters.png
+      :target: pcbs.html
+      
+.. image:: assets/jlcpcb_assembly_parameters.png
+      :target: pcbs.html
+
 4. Click **Next**
 
 5. Click **Next**
@@ -54,7 +60,15 @@ Ordering
 
 8. Click **Next**
 
+   If components are unavailable, make substitutions.
+
+.. image:: assets/jlcpcb_confirm_bom.png
+      :target: pcbs.html
+
 9. Click **Next**
+
+.. image:: assets/jlcpcb_confirm_cpl.png
+      :target: pcbs.html
 
 10. If asked, select `Research\Education\DIY\Entertainment > Development Board - HS Code 847330` for the product description.
 
