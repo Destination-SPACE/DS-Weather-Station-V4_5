@@ -79,10 +79,15 @@ Contents
    activities/UVA
 
 .. toctree::
+   :caption: Manufacturing and Ordering Kits
+   :maxdepth: 1
+
+   manufacturing/index
+
+.. toctree::
    :caption: Miscellaneous
    :maxdepth: 2
 
-   hardware/manufacturing
    FAQ <faq/index>
 
 .. * :ref:`genindex`
